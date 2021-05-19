@@ -1,0 +1,106 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/18/2021 11:16:41 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="JERZY-KOMPUTER"
+  DTS:CreatorName="JERZY-KOMPUTER\jerzy"
+  DTS:DTSID="{B95B6BF3-646D-41D1-A884-991AA03FABF4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{25591E93-8810-4E12-8FEA-164CDAEAE2D7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP Connection Manager 2]"
+      DTS:CreationName="SMTP+"
+      DTS:DTSID="{416F041A-F732-438B-92A9-4B73EE78A5B6}"
+      DTS:ObjectName="SMTP Connection Manager 2">
+      <DTS:ObjectData>
+        <ConnectionManager
+          ConnectionString="ConnectionType=ImplicitTLS;ServerHost=smtp.gmail.com;ServerPort=465;ServerUser=jerzawserver@gmail.com;ServerTimeout=100;AuthenticationType=Auto;LogFile=;Pipelining=True;Chunking=True;RetainSameConnection=True;ProxyHost=;ProxyPort=0;ProxyUser=;"
+          ConnectByProxy="False">
+          <ServerPassword
+            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsg/w9B6F80eYEVegVlFWKAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACbSW7B5wIznzx47NP3fezmozkWmGL6AVQol8mvI2Gw4AAAAAAOgAAAAAIAACAAAAC4wPV51I0AIRWWPkqSHWAd6mxXC6boZV7UnUt9VRAV+SAAAAAWuYr3ANCpQ5LEBQasBUlapuJqqUYqsCGyk0UAO/cAS0AAAACBmIXpMuwpngQtdTCm/GuBLwMbrjnWOyOFEevRlfCSaV5Bsw2zXGRwCZso+tPmHe/PAcgGlDVaJ9cJ2R2hxis/</ServerPassword>
+        </ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task Plus"
+      DTS:CreationName="CozyRoc.SendMailTask"
+      DTS:Description="Send Mail Task Plus"
+      DTS:DTSID="{39B93A86-A826-4BF3-9BB5-274CAEA64695}"
+      DTS:ExecutableType="CozyRoc.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task Plus"
+      DTS:TaskContact="Send Mail Task Plus; COZYROC LLC; SSIS+; © 2006-2020 COZYROC LLC; All Rights Reserved; http://www.cozyroc.com/;"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SendMailData
+          StopOnFailure="True"
+          IsNewMail="True"
+          From="jerzawserver@gmail.com"
+          IsSubjectVariable="False"
+          Subject="testowy mail"
+          ToSource="DirectInput"
+          To="jerzykz.zawieja@gmail.com"
+          CcSource="DirectInput"
+          Cc=""
+          BccSource="DirectInput"
+          Bcc=""
+          HeadersSource="DirectInput"
+          Headers=""
+          BodyTextSource="DirectInput"
+          BodyText="trololo treść maila"
+          BodyHtmlSource="DirectInput"
+          BodyHtml=""
+          Priority="Normal"
+          IsAttachmentVariable="False"
+          Attachment=""
+          IsSourceVariable="False"
+          Source=""
+          RemoveSource="False"
+          IsSigned="False"
+          IsPrivateKeyVariable="False"
+          PrivateKey=""
+          IsEncrypted="False"
+          IsCertificateVariable="False"
+          Certificate=""
+          Delivery="Server"
+          IsTargetVariable="False"
+          Target="{416F041A-F732-438B-92A9-4B73EE78A5B6}"
+          OverwriteExisting="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Send Mail Task Plus"
+          TopLeft="268,194" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
